@@ -5,6 +5,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <!-- Facebook meta -->
+    <meta property="og:url" content="https://it-eria.github.io/yarych-test/build/index.html" />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Yarych test" />
+    <meta property="og:description" content="Your description" />
+    <meta property="og:image" content="https://it-eria.github.io/yarych-test/build/assets/img/3.jpg" />
+    <!-- /Facebook meta -->
     <link rel="stylesheet" href="assets/css/style.min.css">
     <title>Test</title>
 </head>
@@ -253,8 +260,22 @@
         Your browser does not support the video tag.
       </video>
             <p id="result"></p>
-            <iframe src="https://www.facebook.com/plugins/share_button.php?href=https%3A%2F%2Fit-eria.github.io%2Fyarych-test%2Fbuild%2F&layout=button_count&size=large&mobile_iframe=true&width=126&height=28&appId" width="126" height="28" style="border:none;overflow:hidden"
-                scrolling="no" frameborder="0" allowTransparency="true"></iframe>
+            <!-- Load Facebook SDK for JavaScript -->
+            <div id="fb-root"></div>
+            <script>
+                (function(d, s, id) {
+                    var js, fjs = d.getElementsByTagName(s)[0];
+                    if (d.getElementById(id)) return;
+                    js = d.createElement(s);
+                    js.id = id;
+                    js.src = "https://connect.facebook.net/en_US/sdk.js#xfbml=1";
+                    fjs.parentNode.insertBefore(js, fjs);
+                }(document, 'script', 'facebook-jssdk'));
+            </script>
+
+            <!-- Your share button code -->
+            <div class="fb-share-button" data-href="https://it-eria.github.io/yarych-test/build/index.html" data-layout="button_count">
+            </div>
         </section>
         <!-- /Row 5 -->
     </div>

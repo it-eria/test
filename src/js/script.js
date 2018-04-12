@@ -66,6 +66,7 @@ $(function() {
         ++currentCoord;
         if(currentCoord > coords.length - 2) {
             $('p#result').text(results[findResult()]);
+            $('meta[property="og:description"]').attr('content', results[findResult()]);
         }
         setPosition(currentCoord);
     });
