@@ -38,8 +38,9 @@
             text-transform: uppercase;
             margin-bottom: 100px;
             @media screen and (max-width: 767px) {
-                font-size: 33px;
-                margin-bottom: 50px;
+                font-size: 10px;
+                line-height: 16px;
+                margin-bottom: 30px;
             }
         }
         img {
@@ -62,7 +63,10 @@
                 font-weight: 700;
             }
             @media screen and (max-width: 767px) {
-                font-size: 19px;
+                font-size: 16px;
+                line-height: 20px;
+                margin-top: 15px;
+                margin-bottom: 15px;
             }
         }
         a {
@@ -83,6 +87,14 @@
             font-size: 29px;
             font-weight: 400;
             text-decoration: none;
+            @media screen and (max-width: 767px) {
+                font-size: 18px;
+                line-height: 22px;
+                margin-top: 15px;
+                margin-bottom: 15px;
+                width: 100px;
+                height: 100px;
+            }
         }
     }
     &__question {
@@ -102,7 +114,7 @@
                          3px 3px 0 rgba(255,0,0,.5),
                          4px 4px 0 rgba(255,0,0,.5);            
             @media screen and (max-width: 767px) {
-                font-size: 40px;
+                font-size: 20px;
                 margin-top: 30px;
             }
         }
@@ -135,7 +147,8 @@
                 position: relative;
                 cursor: pointer;
                 @media screen and (max-width: 767px) {
-                    font-size: 20px;
+                    font-size: 14px;
+                    border-bottom-width: 1px;
                 }
                 &:last-child {
                     border-bottom: none;
@@ -172,6 +185,7 @@
             }
             @media screen and (max-width: 767px) {
                 padding: 15px;
+                margin-bottom: 15px;
             }
         }
         .btn_next-page {
@@ -192,8 +206,8 @@
                 background-color: rgb(255, 75, 75);
             }
             @media screen and (max-width: 767px) {
-                font-size: 30px;
-                line-height: 44px;
+                font-size: 22px;
+                line-height: 36px;
             }
         }
     }
@@ -208,10 +222,18 @@
             margin-top: 60px;
         }
         @media screen and (max-width: 767px) {
+            img {
+                width: 100%;
+                margin-top: 15px;
+            }
             video {
-                margin-top: 30px;
+                margin-top: 15px;
                 width: 100%;
 
+            }
+            #result {
+                font-size: 16px;
+                line-height: 20px;
             }
         }
     }

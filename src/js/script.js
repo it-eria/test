@@ -71,6 +71,18 @@ $(function() {
         setPosition(currentCoord);
     });
 
+    $('#share').on('click', function(e) {
+        e.preventDefault();
+        FB.ui({
+            method: 'share',
+            mobile_iframe: true,
+            quote: results[findResult()],
+            href: 'https://it-eria.github.io/yarych-test/build/',
+            picture: 'https://it-eria.github.io/yarych-test/build/assets/img/3.jpg'
+
+        }, function(response){}); 
+    });
+
     $('.screen__question .btn_next-page').on('click', function(e) {
         var number = +$(this).parent().find('input[type="radio"]:checked').val();
         votes[number - 1] += 1;
@@ -78,6 +90,17 @@ $(function() {
 
     $('input[type="radio"]').on('click', function() {
         $(this).parent().addClass('checked');
+    });
+
+    // Facebook sdk
+    $.ajaxSetup({ cache: true });
+    $.getScript('https://connect.facebook.net/en_US/sdk.js', function(){
+        FB.init({
+            appId: '460473194405508',
+            version: 'v2.7'
+        });
+        $('#loginbutton,#feedbutton').removeAttr('disabled');
+        FB.getLoginStatus(updateStatusCallback);
     });
 
 });
