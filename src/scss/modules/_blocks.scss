@@ -243,5 +243,5 @@
     display: flex;
     width: 300vw;
     flex-flow: row wrap;
-    transition: all .8s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+    transition: all .8s ease-in-out;
 }
