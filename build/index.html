@@ -14,15 +14,6 @@
     <meta property="og:image" content="https://iteria.com.ua/yarych/build/assets/img/3.jpg">
     <meta property="og:image:width" content="320">
     <meta property="og:image:height" content="320">
-    <!-- 
-  {
-    "protocol": "ftp",
-    "port": 2104,
-    "host": "88.99.238.14",
-    "username": "yarych",
-    "password": "yarychftppass",
-    "remotePath": "./"
-} -->
     <!-- /Facebook meta -->
     <link rel="stylesheet" href="assets/css/style.min.css">
     <title>Test</title>
@@ -44,13 +35,14 @@
             }
             js = d.createElement(s);
             js.id = id;
-            js.src = "//connect.facebook.net/en_US/sdk.js";
+            js.src = "https://connect.facebook.net/en_US/sdk.js";
             fjs.parentNode.insertBefore(js, fjs);
         }(document, 'script', 'facebook-jssdk'));
     </script>
 </head>
 
 <body>
+    <div id="fb-root"></div>
     <div class="canvas">
         <!-- Row 1 -->
         <section class="screen">
@@ -294,7 +286,7 @@
         Your browser does not support the video tag.
       </video>
             <p id="result"></p>
-            <div class="fb-button"></div>
+            <a class="fb-button">Поширити</a>
         </section>
         <!-- /Row 5 -->
     </div>

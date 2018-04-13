@@ -66,30 +66,6 @@ $(function() {
         ++currentCoord;
         if(currentCoord > coords.length - 2) {
             $('p#result').text(results[findResult()]);
-            $('meta[property="og:description"]').attr('content', results[findResult()]);
-            $('body').prepend('<div id="fb-root"></div>');
-            
-            // $.ajaxSetup({ cache: true });
-            // $.getScript('https://connect.facebook.net/en_US/sdk.js', function(){
-            //     FB.init({
-            //         appId: '460473194405508',
-            //         version: 'v2.7'
-            //     });     
-            //     $('#loginbutton,#feedbutton').removeAttr('disabled');
-            //     FB.getLoginStatus(updateStatusCallback);
-            // });
-            // Facebook sdk
-            // (function(d, s, id) {
-            //     var js, fjs = d.getElementsByTagName(s)[0];
-            //     if (d.getElementById(id)) return;
-            //     js = d.createElement(s); js.id = id;
-            //     js.src = 'https://connect.facebook.net/uk_UA/sdk.js#xfbml=1&version=v2.12&appId=460473194405508&autoLogAppEvents=1';
-            //     fjs.parentNode.insertBefore(js, fjs);
-            // }(document, 'script', 'facebook-jssdk'));
-
-            shareOverrideOGMeta("Title overrided", results[findResult()], "https://iteria.com.ua/yarych/build/assets/img/3.jpg");
-
-            $('.fb-button').html('<div class="fb-share-button" data-href="https://iteria.com.ua/yarych/build/index.html" data-layout="button" data-size="large" data-mobile-iframe="true"><a target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fiteria.com.ua%2Fyarych%2Fbuild%2F&amp;src=sdkpreparse" class="fb-xfbml-parse-ignore">Поширити</a></div>');
         }
         setPosition(currentCoord);
     });
@@ -101,6 +77,10 @@ $(function() {
 
     $('input[type="radio"]').on('click', function() {
         $(this).parent().addClass('checked');
+    });
+
+    $('.fb-button').on('click', function() {
+        shareOverrideOGMeta("Title overrided", results[findResult()], "https://iteria.com.ua/yarych/build/assets/img/3.jpg");
     });
 
     function shareOverrideOGMeta(overrideTitle, overrideDescription, overrideImage) {
