@@ -69,7 +69,7 @@
                 margin-bottom: 15px;
             }
         }
-        a {
+        & > a {
             display: flex;
             justify-content: center;
             align-items: center;
@@ -104,26 +104,25 @@
         background-position: 50% 50%;
         background-size: cover;
         text-align: center;
-        h2 {
-            font-family: "Core Sans A 55 Medium";
-            margin: 60px auto 0;
-            max-width: 720px;
-            font-size: 60px;
-            color: #fff;
-            text-shadow: 2px 2px 0 rgba(255,0,0,.5),
-                         3px 3px 0 rgba(255,0,0,.5),
-                         4px 4px 0 rgba(255,0,0,.5);            
-            @media screen and (max-width: 767px) {
-                font-size: 20px;
-                margin-top: 30px;
-            }
-        }
         .variants {
+            h2 {
+                font-family: "Core Sans A 55 Medium";
+                margin: 0 auto 60px;
+                max-width: 720px;
+                font-size: 42px;
+                text-align: center;
+                color: #d40b0b;  
+                @media screen and (max-width: 767px) {
+                    font-size: 20px;
+                    margin-top: 30px;
+                }
+            }
             display: block;
-            margin: 30px auto;
+            margin: 60px auto 30px;
             width: 80%;
             max-width: 900px;
-            background-color: #fff;
+            background-color: rgba(255,255,255,.8);
+            background-image: url(../img/question-bg.png);
             padding: 30px;
             position: relative;
             z-index: 100;
@@ -139,11 +138,11 @@
                 }
             }
             label {
-                font-family: "Century Gothic";
+                font-family: "Core Sans A 45 Regular";
                 display: block;
                 padding: 5px 10px;
                 border-bottom: 2px solid rgba(0,0,0,.5);
-                font-size: 36px;
+                font-size: 34px;
                 position: relative;
                 cursor: pointer;
                 @media screen and (max-width: 767px) {
@@ -162,20 +161,9 @@
                     left: 0;
                     width: 0;
                     height: 100%;
-                    background-color: rgba(255, 0, 0, .5);
+                    background-image: url(../img/active-answer.png);
                     transition: all .3s ease-in-out;
                 }
-            }
-            &:before {
-                content: '';
-                display: block;
-                width: calc(100% + 20px);
-                height: calc(100% + 20px);
-                position: absolute;
-                z-index: -1;
-                top: -10px;
-                left: -10px;
-                background-color: rgba(255,255,255,.5);
             }
             &.checked {
                 & + .btn_next-page {
@@ -186,25 +174,27 @@
             @media screen and (max-width: 767px) {
                 padding: 15px;
                 margin-bottom: 15px;
+                margin-top: 15px;
             }
         }
         .btn_next-page {
             font-family: "Core Sans A 55 Medium";
             display: inline-block;
             overflow: hidden;
-            padding: 0 60px;
-            font-size: 36px;
-            line-height: 50px;
+            padding: 0;
+            font-size: 38px;
+            line-height: 128px;
+            width: 128px;
+            height: 128px;
+            border-radius: 50%;
             color: #fff;
-            background-color: rgba(255,0,0,.8);
+            background-image: url(../img/btn-next.png);
+            background-repeat: no-repeat;
+            background-position: 50% 50%;
+            background-size: cover;
             text-decoration: none;
-            height: auto;
-            max-height: 0;
             visibility: hidden;
             transition: all .3s ease-in-out;
-            &:hover {
-                background-color: rgb(255, 75, 75);
-            }
             @media screen and (max-width: 767px) {
                 font-size: 22px;
                 line-height: 36px;
@@ -244,4 +234,22 @@
     width: 300vw;
     flex-flow: row wrap;
     transition: all .8s ease-in-out;
+}
+
+.fb-button {
+    display: inline-block;
+    font-family: "Core Sans A 55 Medium";
+    font-size: 30px;
+	color: #fff;
+    background-color: #4C67A1;
+    padding: 10px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+.fb-button:hover {
+	color: #fff;
+	background-color: #405D9B;
+}
+.fb-button:focus {
+	color: #fff;
 }
