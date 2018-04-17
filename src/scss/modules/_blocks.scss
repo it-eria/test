@@ -7,6 +7,7 @@
     width: calc(100vw - 30px);
     overflow-y: auto;
     padding: 0 15px;
+    position: relative;
     #result {
         margin: 30px auto;
         width: 90%;
@@ -102,7 +103,7 @@
         background-image: url(../img/3.jpg);
         background-repeat: no-repeat;
         background-position: 50% 50%;
-        background-size: cover;
+        background-size: auto 115%;
         text-align: center;
         .variants {
             h2 {

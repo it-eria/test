@@ -99,4 +99,15 @@ $(function() {
         // Action after response
         });
     }
+
+    var movementStrength = 25;
+    var height = movementStrength / $('.screen').height();
+    var width = movementStrength / $('.screen').width();
+    $(".screen").mousemove(function(e){
+        var pageX = e.pageX - ($('.screen').width() / 2);
+        var pageY = e.pageY - ($('.screen').height() / 2);
+        var newvalueX = width * pageX * -1 - 25;
+        var newvalueY = height * pageY * -1 - 50;
+        $(this).css("background-position", newvalueX+"px     "+newvalueY+"px");
+    });
 });
