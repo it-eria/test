@@ -98,7 +98,8 @@ $(function() {
     });
 
     $('.fb-button').on('click', function() {
-        shareOverrideOGMeta('', results[findResult()], (domain+images[findResult()]));
+        console.log(domain+images[findResult()]);
+        shareOverrideOGMeta('Яка ти героїня кіно?', results[findResult()], (domain+images[findResult()]));
     });
 
     function shareOverrideOGMeta(overrideTitle, overrideDescription, overrideImage) {
