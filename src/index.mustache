@@ -6,11 +6,11 @@
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <!-- Facebook meta -->
   <meta property="fb:app_id" content="460473194405508" />
-  <meta property="og:url" content="https://iteria.com.ua/yarych/build/index.html" >
+  <meta property="og:url" content="https://promo.yarych.com/index.html" >
   <meta property="og:type" content="article" >
   <meta property="og:title" content="Title" >
   <meta property="og:description" content="Description" >
-  <meta property="og:image" content="https://iteria.com.ua/yarych/build/assets/img/3.jpg" >
+  <meta property="og:image" content="https://promo.yarych.com/assets/img/final.jpg" >
   <meta property="og:image:width" content="320" >
   <meta property="og:image:height" content="320" >
   <!-- /Facebook meta -->
@@ -23,6 +23,7 @@
         appId            : '460473194405508',
         autoLogAppEvents : true,
         xfbml            : true,
+        cookies          : true,
         version          : 'v2.10'
       });
       FB.AppEvents.logPageView();
@@ -41,28 +42,49 @@
   <div id="fb-root"></div>
   <div class="canvas">
     <!-- Row 1 -->
-    <section class="screen">
-    </section>
-    <section class="screen screen__start" data-index="0" data-x="1" data-y="0">
+     <section class="screen screen__start" data-index="0" data-x="0" data-y="0">
       <h4>Цей тест може зламати твоє тендітне чоловіче нутро, закрий! Цей тест може зламати твоє тендітне чоловіче нутро, закрий! Цей тест може зламати твоє тендітне чоловіче нутро, закрий! Цей тест може зламати твоє тендітне чоловіче нутро, закрий!</h4>
       <div>
         <img src="assets/img/start-img.png" alt="start">
         <p>
-            Жінки, прийшов час дізнатись, який в тебе тип характеру насправді.
-            <b>Розкажи усьому світу, з якого ти фільму!</b>
+          Жінки, прийшов час дізнатись, який в тебе тип характеру насправді.
+          <b>Розкажи усьому світу, з якого ти фільму!</b>
         </p>
+        <a href="#" class="btn_next-page">
+          <span>
+            Старт
+          </span>
+        </a>
       </div>
-      <a href="#" class="btn_next-page">
-        Старт
-      </a>
     </section>
-    <section class="screen">
-    </section>
+    <section class="screen"></section>
+    <section class="screen"></section>
     <!-- /Row 1 -->
-    <!-- Row 2 -->
-    <section class="screen">
+    <!-- Row 1_1 -->
+    <section class="screen screen__question" data-index="1" data-x="0" data-y="1" style="background-image: url(assets/img/1.jpg);">
+      <div class="hello-block">
+        <h2>
+          Привіт
+          <br><br>
+          Цей тест відкриє тобі очі на твійприхований акторський талант
+          <br><br>
+          Щоб визначити фільм для тебе, нам вартопознайомитись ближче
+        </h2>
+        <p>Вкажи:</p>
+        <br><br>
+        <input type="text" placeholder="Прізвище, Ім'я" id="name-field">
+        <span>або</span>
+        <fb:login-button class="fb-login-button" data-max-rows="1" data-size="large" data-button-type="continue_with" data-show-faces="false" data-auto-logout-link="false" data-use-continue-as="true" onlogin="checkLoginState();"></fb:login-button>
+        <br>
+        <br>
+        <a href="#" class="btn_next-page create-full-name"><span>Далі</span></a>
+      </div>
     </section>
-    <section class="screen screen__question" data-index="1" data-x="1" data-y="1" style="background-image: url(assets/img/test-1.jpg);">
+    <section class="screen"></section>
+    <section class="screen"></section>
+    <!-- /Row 1_1 -->
+    <!-- Row 2 -->
+    <section class="screen screen__question" data-index="2" data-x="0" data-y="2" style="background-image: url(assets/img/1.jpg);">
       <div class="variants">
           <h2>З чого зазвичай починається твій день?</h2>
         <input type="radio" value="1" name="variants-1" id="variant-1_1">
@@ -94,12 +116,12 @@
           Годую котів, мажу хліб майонезом
         </label>
       </div>
-      <a href="#" class="btn_next-page">Далі</a>
+      <a href="#" class="btn_next-page"><span>Далі</span></a>
     </section>
     <section class="screen"></section>
-    <!-- Row 3 -->
     <section class="screen"></section>
-    <section class="screen screen__question" data-index="2" data-x="1" data-y="2" style="background-image: url(assets/img/test-2.jpg);">
+    <!-- Row 3 -->
+    <section class="screen screen__question" data-index="3" data-x="0" data-y="3" style="background-image: url(assets/img/2.jpg);">
       <div class="variants">
           <h2>Чим ти займаєшся, якщо з’явиться вільна хвилинка?</h2>
         <input type="radio" value="2" name="variants-1" id="variant-2_1">
@@ -131,9 +153,10 @@
           Йду на фітнес
         </label>
       </div>
-      <a href="#" class="btn_next-page">Далі</a>
+      <a href="#" class="btn_next-page"><span>Далі</span></a>
     </section>
-    <section class="screen screen__question" data-index="3" data-x="2" data-y="2" style="background-image: url(assets/img/test-3.jpg);">
+    <section class="screen" style="background-image: url(assets/img/3.jpg);"></section>
+    <section class="screen screen__question" data-index="4" data-x="2" data-y="3" style="background-image: url(assets/img/4.jpg);">
       <div class="variants">
           <h2>Твій улюблений напій?</h2>
         <input type="radio" value="4" name="variants-1" id="variant-3_1">
@@ -165,12 +188,16 @@
           Какао
         </label>
       </div>
-      <a href="#" class="btn_next-page">Далі</a>
+      <a href="#" class="btn_next-page"><span>Далі</span></a>
     </section>
     <!-- /Row 3 -->
+    <!-- Empty row -->
+    <section class="screen"></section>
+    <section class="screen"></section>
+    <section class="screen" style="background-image: url(assets/img/5.jpg);"></section>
+    <!-- Empty row -->
     <!-- Row 4 -->
-    <section class="screen"></section>   
-    <section class="screen screen__question" data-index="5" data-x="1" data-y="3" style="background-image: url(assets/img/test-5.jpg);">
+    <section class="screen screen__question" data-index="6" data-x="0" data-y="5" style="background-image: url(assets/img/8.jpg);">
       <div class="variants">
         <h2>Як виглядає твій типовий вечір?</h2>
         <input type="radio" value="5" name="variants-1" id="variant-5_1">
@@ -202,9 +229,10 @@
           Приймаю горизонтальне положення
         </label>
       </div>
-      <a href="#" class="btn_next-page">Далі</a>
+      <a href="#" class="btn_next-page"><span>Далі</span></a>
     </section>
-    <section class="screen screen__question" data-index="4" data-x="2" data-y="3" style="background-image: url(assets/img/test-4.jpg);">
+    <section class="screen" style="background-image: url(assets/img/7.jpg);"></section>
+    <section class="screen screen__question" data-index="5" data-x="2" data-y="5" style="background-image: url(assets/img/6.jpg);">
       <div class="variants">
           <h2>Тобі підморгнув красунчик, твої дії:</h2>
         <input type="radio" value="7" name="variants-1" id="variant-4_1">
@@ -236,12 +264,11 @@
           Проводжатиму його поглядом в натовп
         </label>
       </div>
-      <a href="#" class="btn_next-page">Далі</a>
+      <a href="#" class="btn_next-page"><span>Далі</span></a>
     </section> 
     <!-- /Row 4 -->    
-    <section class="screen">
-    </section>
-    <section class="screen screen__question" data-index="6" data-x="1" data-y="4" style="background-image: url(assets/img/test-6.jpg);">
+    <!-- Row 5 -->
+    <section class="screen screen__question" data-index="7" data-x="0" data-y="6" style="background-image: url(assets/img/9.jpg);">
       <div class="variants">
           <h2>Який твій улюблений магазин?</h2>
         <input type="radio" value="4" name="variants-1" id="variant-6_1">
@@ -273,23 +300,71 @@
           Модні бутіки
         </label>
       </div>
-      <a href="#" class="btn_next-page">Далі</a>
+      <a href="#" class="btn_next-page"><span>Далі</span></a>
     </section>
+    <section class="screen"></section>
     <section class="screen"></section>
     <!-- /Row 5 -->
     <!-- Row 6 -->
-    <section class="screen"></section>
-    <section class="screen screen__result" data-index="7" data-x="1" data-y="5">
-      <video width="320" height="320" autoplay loop>
-        <source src="assets/img/6.mp4" type="video/mp4">
-        Your browser does not support the video tag.
-      </video>
+    <section class="screen screen__result" data-index="8" data-x="0" data-y="7" style="background-image: url(assets/img/1.jpg);">
+      <img src="assets/img/final.jpg" alt="final" class="final-img">
       <p id="result"></p>
       <a class="fb-button"><i class="fa fa-facebook fa-2"></i> Поширити</a>
     </section>
     <section class="screen"></section>
+    <section class="screen"></section>
     <!-- /Row 6 -->
   </div>
   <script src="assets/js/script.min.js"></script>
+  <script>
+    function checkLoginState() {
+      FB.getLoginStatus(function(response) {
+        if (response.status === 'connected') {
+            // the user is logged in and has authenticated your
+            // app, and response.authResponse supplies
+            // the user's ID, a valid access token, a signed
+            // request, and the time the access token 
+            // and signed request each expire
+            var uid = response.authResponse.userID;
+            var accessToken = response.authResponse.accessToken;
+            getName();
+        } else if (response.status === 'not_authorized') {
+            // the user must go through the login flow
+            // to authorize your app or renew authorization
+            console.log('not loggin');
+        } else {
+            // the user isn't logged in to Facebook.
+        }
+      });
+    }
+
+    FB.getLoginStatus(function(response) {
+      if (response.status === 'connected') {
+          // the user is logged in and has authenticated your
+          // app, and response.authResponse supplies
+          // the user's ID, a valid access token, a signed
+          // request, and the time the access token 
+          // and signed request each expire
+          var uid = response.authResponse.userID;
+          var accessToken = response.authResponse.accessToken;
+          getName();
+      } else if (response.status === 'not_authorized') {
+          // the user must go through the login flow
+          // to authorize your app or renew authorization
+          console.log('not loggin');
+      } else {
+          // the user isn't logged in to Facebook.
+      }
+    });
+
+    function getName() {
+      FB.api('/me', function(response) {
+          $('#name-field').val(response.name);
+          $('.hello-block').parent().find('.btn_next-page').css({
+              'visibility': 'visible'
+          });
+      });
+    }
+  </script>
 </body>
 </html>

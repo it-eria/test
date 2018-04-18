@@ -24,6 +24,8 @@ $(function() {
     ];
     var votes = [];
 
+    var fullName = '';
+
     for(var v=0; v < results.length; v++) {
         votes.push(0);
     }
@@ -80,7 +82,7 @@ $(function() {
     });
 
     $('.fb-button').on('click', function() {
-        shareOverrideOGMeta("Title overrided", results[findResult()], "https://iteria.com.ua/yarych/build/assets/img/3.jpg");
+        shareOverrideOGMeta(fullName, results[findResult()], "https://promo.yarych.com/assets/img/final.jpg");
     });
 
     function shareOverrideOGMeta(overrideTitle, overrideDescription, overrideImage) {
@@ -100,14 +102,18 @@ $(function() {
         });
     }
 
-    var movementStrength = 25;
-    var height = movementStrength / $('.screen').height();
-    var width = movementStrength / $('.screen').width();
-    $(".screen").mousemove(function(e){
-        var pageX = e.pageX - ($('.screen').width() / 2);
-        var pageY = e.pageY - ($('.screen').height() / 2);
-        var newvalueX = width * pageX * -1 - 25;
-        var newvalueY = height * pageY * -1 - 50;
-        $(this).css("background-position", newvalueX+"px     "+newvalueY+"px");
+    $('.create-full-name').on('click', function() {
+        fullName = $('#name-field').val();
+        console.log(fullName);
+    });
+
+    $('#name-field').on('keyup', function() {
+        if($(this).val().length > 1) {
+            $('.create-full-name').css({
+                'visibility': 'visible'
+            });
+        } else {
+            $('.create-full-name').removeAttr('style');
+        }
     });
 });
