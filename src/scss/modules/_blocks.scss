@@ -9,15 +9,19 @@
     padding: 0 15px;
     position: relative;
     background-size: cover;
+    background-color: #fff;
     #result {
-        margin: 30px auto;
-        width: 90%;
-        max-width: 1000px;
-        font-family: "Core Sans A 55 Medium";
-        font-size: 38px;
-        color: #fff;
-        text-shadow: 1px 1px 15px rgba(0,0,0,.5);
+        margin: 15px auto;
+        width: 100%;
+        max-width: 600px;
+        font-family: "Core Sans A 45 Regular";
+        font-size: 22px;
+        color: #000;
         text-align: center;
+        transition: all 1s 2s ease-in-out;
+        &.hidden {
+            opacity: 0;
+        }
     }
     &__start {
         display: block;
@@ -34,9 +38,9 @@
             opacity: 0.3;
             color: #0b0b0b;
             font-family: "Core Sans A 55 Medium";
-            font-size: 53px;
+            font-size: 16px;
             font-weight: 400;
-            line-height: 59px;
+            line-height: 22px;
             text-transform: uppercase;
             margin-bottom: 100px;
             @media screen and (max-width: 767px) {
@@ -134,7 +138,7 @@
                 font-family: "Core Sans A 55 Medium";
                 margin: 0 auto 60px;
                 max-width: 720px;
-                font-size: 42px;
+                font-size: 32px;
                 text-align: center;
                 color: #d40b0b;  
                 @media screen and (max-width: 767px) {
@@ -167,7 +171,7 @@
                 display: block;
                 padding: 5px 10px;
                 border-bottom: 2px solid rgba(0,0,0,.5);
-                font-size: 34px;
+                font-size: 24px;
                 position: relative;
                 cursor: pointer;
                 @media screen and (max-width: 767px) {
@@ -208,9 +212,9 @@
             overflow: hidden;
             padding: 0;
             margin-bottom: 30px;
-            font-size: 38px;
-            width: 128px;
-            height: 128px;
+            font-size: 22px;
+            width: 78px;
+            height: 78px;
             border-radius: 50%;
             color: #fff;
             background-image: url(../img/btn-next.png);
@@ -237,12 +241,12 @@
     }
     &__result {
         display: block;
-        background-image: url(../img/3.jpg);
-        background-repeat: no-repeat;
-        background-position: 50% 50%;
-        background-size: cover;
         text-align: center;
-        @media screen and (max-width: 992px) {
+        background-image: url(../img/result-bg.jpg);
+        background-repeat: repeat-x;
+        background-size: auto 100%;
+        background-position: 0 0;
+        @media screen and (max-width: 767px) {
             img {
                 width: 60%;
                 margin-top: 15px;
@@ -252,16 +256,22 @@
                 line-height: 16px;
             }
         }
+        .white-wraper {
+            background-color: #fff;
+            display: inline-block;
+            padding: 0 30px;
+            height: 100%;
+            @media screen and (max-width: 767px) {
+                padding: 0 10px;
+            }
+        }
     }
     .hello-block {
         padding-left: 20%;
         padding-right: 20%;
-        position: relative;
-        top: 50%;
-        transform: translate(0, -75%);
         text-align: center;
         font-size: 30px;
-        @media screen and (max-width: 992px) {
+        @media screen and (max-width: 767px) {
             font-size: 16px;
             top: 0;
             transform: none;
@@ -271,12 +281,12 @@
         h2 {
             margin-top: 60px;
             font-family: "Core Sans A 55 Medium";
-            font-size: 38px;
+            font-size: 22px;
             color: #fff;
             text-shadow: 1px 1px 15px rgba(0,0,0,.5);
             margin-bottom: 90px;
             text-align: center;
-            @media screen and (max-width: 992px) {
+            @media screen and (max-width: 767px) {
                 font-size: 16px;
                 margin-bottom: 20px;
                 margin-top: 10px;
@@ -284,7 +294,7 @@
         }
         p {
             font-family: "Core Sans A 55 Medium";
-            font-size: 30px;
+            font-size: 22px;
             color: #fff;
             text-shadow: 1px 1px 15px rgba(0,0,0,.5);
             @media screen and (max-width: 767px) {
@@ -293,11 +303,11 @@
         }
         span {
             font-family: "Core Sans A 55 Medium";
-            font-size: 30px;
+            font-size: 22px;
             color: #fff;
             text-shadow: 1px 1px 15px rgba(0,0,0,.5);
             margin: 15px;
-            @media screen and (max-width: 992px) {
+            @media screen and (max-width: 767px) {
                 font-size: 14px;
                 display: block;
                 text-align: center;
@@ -308,7 +318,7 @@
             border-bottom: 2px solid #fff;
             background-color: transparent;
             font-family: "Core Sans A 55 Medium";
-            font-size: 30px;
+            font-size: 22px;
             color: #fff;
             text-shadow: 1px 1px 15px rgba(0,0,0,.5);
             margin-right: 15px;
@@ -324,7 +334,7 @@
             &:-moz-placeholder { /* Firefox 18- */
                 color: #fff;
             }
-            @media screen and (max-width: 992px) {
+            @media screen and (max-width: 767px) {
                 font-size: 18px;
             }
         }
@@ -337,10 +347,11 @@
         }
         .fb-login-button {
             display: inline-block;
+            vertical-align: middle;
             span {
                 text-align: left;
             }
-            @media screen and (max-width: 992px) {
+            @media screen and (max-width: 767px) {
                 margin-bottom: -15px;
             }
         }
@@ -357,32 +368,59 @@
     background-position: 75vw 100vh;
 }
 
+.final-img-wraper {
+    display: inline-block;
+    width: 90%;
+    max-width: 600px;
+    margin: 15px auto;
+    position: relative;
+    transform-origin: 50% 0;
+    transform: scale(1.5);
+    transition: all 1s ease-in-out;
+    &.showen {
+        transform: scale(1);
+    }
+    h3 {
+        position: absolute;
+        top: 0;
+        width: 100%;
+        padding-top: 5px;
+        font-family: "Core Sans A 45 Regular";
+        font-size: 18px;
+        text-transform: uppercase;
+    }
+    p {
+        position: absolute;
+        width: 100%;
+        max-width: 200px;
+        top: 50px;
+        font-family: "Core Sans A 55 Medium";
+        font-size: 22px;
+        text-shadow: 2px 2px 0 #fff;
+        text-transform: uppercase;
+        &.text-left {
+            left: 5%;
+        }
+        &.text-right {
+            right: 5%;
+        }
+    }
+}
+
 .final-img {
     display: block;
-    width: 50%;
-    max-width: 320px;
+    width: 100%;
     height: auto;
-    margin: 15px auto;
 }
 
 .fb-button {
     display: inline-block;
-    font-family: "Core Sans A 55 Medium";
-    font-size: 30px;
-	color: #fff;
-    background-color: #4C67A1;
-    padding: 10px 15px;
-    border-radius: 5px;
-    cursor: pointer;
+    width: 183px;
+    height: 38px;
+    background-image: url(../img/facebook-share-btn.png);
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: 50% 50%;
     margin-bottom: 60px;
-    @media screen and (max-width: 992px) {
-        font-size: 16px;
-    }
-}
-.fb-button:hover {
-	color: #fff;
-	background-color: #405D9B;
-}
-.fb-button:focus {
-	color: #fff;
+    cursor: pointer;
 }

@@ -7,12 +7,13 @@ $(function() {
     var screens = $('.screen[data-index]').length;
     var currentCoord = 0;
     var coords = [];
+    var domain = 'https://promo.yarych.com/'
     var results = [
         "Дівчинко полегше, в повітрі пахне сексом. Ти, як Керрі Бредшоу, крутиш голови чоловікам. Ізі бейбі, тобі потрібен “Yarych з молоком” і затяжний серіальчик “Секс і місто”.  І не забудь поділись результатом з друзями.",
 
         "Оооо, жіночко, та ти вже геть загналася, як Еммі. Пора відірватись з акторками фільму “Погані матусі”  і “Yarych з молоком”. Ти заслужила на це.  І не забудь поділитись результатом з друзями.",
         
-        "Ти супервумен, сильна і незламна. Ти можеш навіть лизнути лікоть і правильно качати тріцепс, як Джейн. Пора розслабитись, задерти ніжки на дивані і похрумтіти “Yarych з молоком”, переглядаючи фільм “Солдат Джейн”.  І не забудь поділитись результатом з друзями.",
+        "Ти супервумен, сильна і незламна. Ти можеш навіть лизнути лікоть і правильно качати тріцепс, як Диво жінка. Пора розслабитись, задерти ніжки на дивані і похрумтіти “Yarych з молоком”, переглядаючи фільм “Диво жінка”.  І не забудь поділитись результатом з друзями.",
 
         "Ми бачимо, тут хтось бізнесвумен, як Джулс Остін. Кар’єра, бізнес, всі справи - сьогодні пошли подалі. Є тільки ти, “Yarych з молоком” і фільм “Стажер”.  І не забудь поділитись результатом з друзями.",
 
@@ -22,6 +23,16 @@ $(function() {
         
         "Збери слюні, мала! Маємо для тебе дві новини. Погана - ти Бріджит Джонс, хороша - все може виправити хрумке печиво “Yarych з молоком” і перегляд фільму “Щоденник Бріджит Джонс”.  І не забудь поділитись результатом з друзями."
     ];
+    var images = [
+        "assets/img/final-1.jpg",
+        "assets/img/final-2.jpg",
+        "assets/img/final-3.jpg",
+        "assets/img/final-4.jpg",
+        "assets/img/final-5.jpg",
+        "assets/img/final-6.jpg",
+        "assets/img/final-7.jpg"
+
+    ]
     var votes = [];
 
     var fullName = '';
@@ -67,7 +78,12 @@ $(function() {
         e.preventDefault();
         ++currentCoord;
         if(currentCoord > coords.length - 2) {
-            $('p#result').text(results[findResult()]);
+            $('p#result').text(results[findResult()]).removeClass('hidden');
+            $('.final-img').attr('src', images[findResult()]);
+            setTimeout(function() {
+                $('.final-img-wraper').addClass('showen');
+            }, 1500);
+            
         }
         setPosition(currentCoord);
     });
@@ -82,7 +98,7 @@ $(function() {
     });
 
     $('.fb-button').on('click', function() {
-        shareOverrideOGMeta(fullName, results[findResult()], "https://promo.yarych.com/assets/img/final.jpg");
+        shareOverrideOGMeta('', results[findResult()], (domain+images[findResult()]));
     });
 
     function shareOverrideOGMeta(overrideTitle, overrideDescription, overrideImage) {
@@ -104,7 +120,7 @@ $(function() {
 
     $('.create-full-name').on('click', function() {
         fullName = $('#name-field').val();
-        console.log(fullName);
+        $('.final-img-wraper .text-left').text(fullName);
     });
 
     $('#name-field').on('keyup', function() {
