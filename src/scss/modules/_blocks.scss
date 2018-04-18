@@ -247,10 +247,6 @@
         background-size: auto 100%;
         background-position: 0 0;
         @media screen and (max-width: 767px) {
-            img {
-                width: 60%;
-                margin-top: 15px;
-            }
             #result {
                 font-size: 14px;
                 line-height: 16px;
@@ -388,10 +384,13 @@
         font-family: "Core Sans A 45 Regular";
         font-size: 18px;
         text-transform: uppercase;
+        @media screen and (max-width: 767px) {
+            font-size: 14px;
+        }
     }
     p {
         position: absolute;
-        width: 100%;
+        width: 50%;
         max-width: 200px;
         top: 50px;
         font-family: "Core Sans A 55 Medium";
@@ -400,9 +399,18 @@
         text-transform: uppercase;
         &.text-left {
             left: 5%;
+            @media screen and (max-width: 767px) {
+                left: 0;
+            }
         }
         &.text-right {
             right: 5%;
+            @media screen and (max-width: 767px) {
+                right: 0;
+            }
+        }
+        @media screen and (max-width: 767px) {
+            font-size: 16px;
         }
     }
 }
