@@ -15,7 +15,7 @@
         width: 100%;
         max-width: 600px;
         font-family: "Core Sans A 45 Regular";
-        font-size: 18px;
+        font-size: 16px;
         color: #000;
         text-align: center;
         transition: all 1s 2s ease-in-out;
@@ -383,7 +383,7 @@
         width: 100%;
         padding-top: 5px;
         font-family: "Core Sans A 45 Regular";
-        font-size: 18px;
+        font-size: 16px;
         text-transform: uppercase;
         @media screen and (max-width: 767px) {
             font-size: 14px;
@@ -393,10 +393,10 @@
         position: absolute;
         width: 50%;
         max-width: 200px;
-        top: 50px;
+        top: 25px;
         font-family: "Core Sans A 55 Medium";
-        font-size: 22px;
-        text-shadow: 2px 2px 0 #fff;
+        font-size: 16px;
+        text-shadow: 1px 1px 0 #fff;
         text-transform: uppercase;
         &.text-left {
             left: 3%;
