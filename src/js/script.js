@@ -91,7 +91,7 @@ $(function() {
             setTimeout(function() {
                 $('.final-img-wraper').addClass('showen');
             }, 1500);
-            
+            fbq('track', 'CompleteRegistration');            
         }
         setPosition(currentCoord);
     });
@@ -106,8 +106,8 @@ $(function() {
     });
 
     $('.fb-button').on('click', function() {
-        console.log(domain+images[findResult()]);
         shareOverrideOGMeta('Яка ти героїня кіно?', results[findResult()], (domain+imagesFB[findResult()]));
+        fbq('track', 'Lead');
     });
 
     function shareOverrideOGMeta(overrideTitle, overrideDescription, overrideImage) {
