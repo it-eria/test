@@ -31,7 +31,15 @@ $(function() {
         "assets/img/final-5.jpg",
         "assets/img/final-6.jpg",
         "assets/img/final-7.jpg"
-
+    ];
+    var imagesFb = [
+        "assets/img/final-1-fb.jpg",
+        "assets/img/final-2-fb.jpg",
+        "assets/img/final-3-fb.jpg",
+        "assets/img/final-4-fb.jpg",
+        "assets/img/final-5-fb.jpg",
+        "assets/img/final-6-fb.jpg",
+        "assets/img/final-7-fb.jpg"
     ]
     var votes = [];
 
@@ -99,7 +107,7 @@ $(function() {
 
     $('.fb-button').on('click', function() {
         console.log(domain+images[findResult()]);
-        shareOverrideOGMeta('Яка ти героїня кіно?', results[findResult()], (domain+images[findResult()]));
+        shareOverrideOGMeta('Яка ти героїня кіно?', results[findResult()], (domain+imagesFB[findResult()]));
     });
 
     function shareOverrideOGMeta(overrideTitle, overrideDescription, overrideImage) {
