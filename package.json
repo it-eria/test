@@ -29,5 +29,7 @@
     "gulp-wait": "0.0.2",
     "smart-grid": "^2.0.1"
   },
-  "dependencies": {}
+  "dependencies": {
+    "npm": "^5.8.0"
+  }
 }

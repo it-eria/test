@@ -91,7 +91,11 @@ $(function() {
             setTimeout(function() {
                 $('.final-img-wraper').addClass('showen');
             }, 1500);
-            fbq('track', 'CompleteRegistration');            
+            try {
+              fbq('track', 'CompleteRegistration');
+            } catch(err) {
+              console.log(err);
+            }
         }
         setPosition(currentCoord);
     });
@@ -106,8 +110,12 @@ $(function() {
     });
 
     $('.fb-button').on('click', function() {
-        shareOverrideOGMeta('Яка ти героїня кіно?', results[findResult()], (domain+imagesFB[findResult()]));
-        fbq('track', 'Lead');
+        shareOverrideOGMeta('Яка ти героїня кіно?', results[findResult()], (domain+imagesFb[findResult()]));
+        try {
+          fbq('track', 'Lead');
+        } catch(err) {
+          console.log(err);
+        }
     });
 
     function shareOverrideOGMeta(overrideTitle, overrideDescription, overrideImage) {
