@@ -1,7 +1,5 @@
 /* Import libraties */
 //= vendors/jquery-3.3.1.js
-//= vendors/slick.js
-//= vendors/parallax.js
 
 $(function() {
     var screens = $('.screen[data-index]').length;
@@ -22,6 +20,15 @@ $(function() {
         "Ти така ж творча і мила натура, як Мія Доллан. Тебе обов’язково надихне музичний, романтичний, комедійно-драматичний фільм “Ла-Ла Ленд” та смак хрумкої новинки “Yarych з молоком”.  І не забудь поділись результатом з друзями.",
         
         "Збери слюні, мала! Маємо для тебе хороші новини. Змінювати своє життя - правильне рішення, а кепський настрій розчиняється при  перегляді фільму “Щоденник Бріджит Джонс” і хрумкотінні печивом  “Yarych з молоком”.  І не забудь поділитись результатом з друзями"
+    ];
+    var titles = [
+        "Ти - приголомшлива Керрі Бредшоу!",
+        "Ти - матуся Еммі у відриві!",
+        "Ти - суперсила Діана!",
+        "Ти - цілеспрямована Джулс Остін!",
+        "Ти - кокеточка Голлі Голайтлі!",
+        "Ти - творча натура Міа!",
+        "Ти - прокачана Бріджит Джонс!"
     ];
     var images = [
         "assets/img/final-1.jpg",
@@ -109,12 +116,30 @@ $(function() {
         $(this).parent().addClass('checked');
     });
 
-    $('.fb-button').on('click', function() {
-        shareOverrideOGMeta('Яка ти героїня кіно?', results[findResult()], (domain+imagesFb[findResult()]));
+    $('.fb-button').on('click', function(e) {
+        e.preventDefault();
+        shareOverrideOGMeta(titles[findResult()], "Дізнайся, яка ти героїня кіно. Захопливий сюжет твого життя наче кінострічка! Ти створена підкорювати сцени світового кіно! Шоубіз, натовпи фанів та нишпорки-фотографи - ось, твоя ціль! Пойди тест та розкажи усім навколо, яка твоя роль!", (domain+imagesFb[findResult()]));
         try {
           fbq('track', 'Lead');
         } catch(err) {
           console.log(err);
+        }
+    });
+
+    
+
+    $('.create-full-name').on('click', function() {
+        fullName = $('#name-field').val();
+        $('.final-img-wraper .text-left').text(fullName);
+    });
+
+    $('#name-field').on('keyup', function() {
+        if($(this).val().length > 1) {
+            $('.create-full-name').css({
+                'visibility': 'visible'
+            });
+        } else {
+            $('.create-full-name').removeAttr('style');
         }
     });
 
@@ -134,19 +159,4 @@ $(function() {
         // Action after response
         });
     }
-
-    $('.create-full-name').on('click', function() {
-        fullName = $('#name-field').val();
-        $('.final-img-wraper .text-left').text(fullName);
-    });
-
-    $('#name-field').on('keyup', function() {
-        if($(this).val().length > 1) {
-            $('.create-full-name').css({
-                'visibility': 'visible'
-            });
-        } else {
-            $('.create-full-name').removeAttr('style');
-        }
-    });
 });
