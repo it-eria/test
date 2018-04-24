@@ -21,15 +21,6 @@ $(function() {
         
         "Збери слюні, мала! Маємо для тебе хороші новини. Змінювати своє життя - правильне рішення, а кепський настрій розчиняється при  перегляді фільму “Щоденник Бріджит Джонс” і хрумкотінні печивом  “Yarych з молоком”.  І не забудь поділитись результатом з друзями"
     ];
-    var titles = [
-        "Ти - приголомшлива Керрі Бредшоу!",
-        "Ти - матуся Еммі у відриві!",
-        "Ти - суперсила Діана!",
-        "Ти - цілеспрямована Джулс Остін!",
-        "Ти - кокеточка Голлі Голайтлі!",
-        "Ти - творча натура Міа!",
-        "Ти - прокачана Бріджит Джонс!"
-    ];
     var images = [
         "assets/img/final-1.jpg",
         "assets/img/final-2.jpg",
@@ -39,15 +30,6 @@ $(function() {
         "assets/img/final-6.jpg",
         "assets/img/final-7.jpg"
     ];
-    var imagesFb = [
-        "assets/img/final-1-fb.jpg",
-        "assets/img/final-2-fb.jpg",
-        "assets/img/final-3-fb.jpg",
-        "assets/img/final-4-fb.jpg",
-        "assets/img/final-5-fb.jpg",
-        "assets/img/final-6-fb.jpg",
-        "assets/img/final-7-fb.jpg"
-    ]
     var votes = [];
 
     var fullName = '';
@@ -118,7 +100,10 @@ $(function() {
 
     $('.fb-button').on('click', function(e) {
         e.preventDefault();
-        shareOverrideOGMeta(titles[findResult()], "Дізнайся, яка ти героїня кіно. Захопливий сюжет твого життя наче кінострічка! Ти створена підкорювати сцени світового кіно! Шоубіз, натовпи фанів та нишпорки-фотографи - ось, твоя ціль! Пойди тест та розкажи усім навколо, яка твоя роль!", (domain+imagesFb[findResult()]));
+        FB.ui({
+            method: 'share',
+            href: 'https://promo.yarych.com/res-' + (findResult() + 1) + '.html',
+        }, function(response){});
         try {
           fbq('track', 'Lead');
         } catch(err) {
@@ -142,21 +127,4 @@ $(function() {
             $('.create-full-name').removeAttr('style');
         }
     });
-
-    function shareOverrideOGMeta(overrideTitle, overrideDescription, overrideImage) {
-        FB.ui({
-            method: 'share_open_graph',
-            action_type: 'og.shares',
-            action_properties: JSON.stringify({
-                object: {
-                    'og:title': overrideTitle,
-                    'og:description': overrideDescription,
-                    'og:image': overrideImage
-                }
-            })
-        },
-        function (response) {
-        // Action after response
-        });
-    }
 });
